@@ -1,0 +1,7 @@
+{
+  "name": "InstaSound",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
