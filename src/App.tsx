@@ -10,7 +10,7 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { homeOutline, personOutline, searchOutline } from 'ionicons/icons';
 import Fil from './pages/Fil';
 import Search from './pages/Search';
 import Profil from './pages/Profil';
@@ -51,15 +51,15 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="fil" href="/fil">
-            <IonIcon icon={triangle} />
+            <IonIcon icon={homeOutline} />
             <IonLabel>Fil</IonLabel>
           </IonTabButton>
           <IonTabButton tab="search" href="/search">
-            <IonIcon icon={ellipse} />
+            <IonIcon icon={searchOutline} />
             <IonLabel>Search</IonLabel>
           </IonTabButton>
           <IonTabButton tab="profil" href="/profil">
-            <IonIcon icon={square} />
+            <IonIcon icon={personOutline} />
             <IonLabel>Profil</IonLabel>
           </IonTabButton>
         </IonTabBar>

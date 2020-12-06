@@ -35,17 +35,13 @@ const Login: React.FC = () => {
       <IonLoading message="Please Wait..." duration={0} isOpen={busy}/>
       <IonRow>
         <IonCol>
-          <IonIcon
-            style={{ fontSize: "70px", color: "#0040ff" }}
-            icon={personCircle}
-          />
-          </IonCol>
+          <IonTitle size="large" id="titreInstaLogin">InstaSound</IonTitle>
+        </IonCol>
       </IonRow>
       <IonRow>
         <IonCol>
           <IonItem>
-            <IonLabel position="floating"> Email </IonLabel>
-              <IonInput
+            <IonInput placeholder="Email ou nom d'utilisateur"
                 type="text"
                 value={username}
                 onIonChange={(e:any) => setUsername(e.target.value)}
@@ -57,8 +53,7 @@ const Login: React.FC = () => {
       <IonRow>
         <IonCol>
           <IonItem>
-            <IonLabel position="floating"> Password </IonLabel>
-              <IonInput
+              <IonInput placeholder="Mot de passe"
                 type="password"
                 value={password}
                 onIonChange={(e:any) => setPassword(e.target.value)}
