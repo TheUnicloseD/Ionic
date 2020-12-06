@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import {shareAlbum} from '../FirebaseConfig'
 import './Search.css';
@@ -32,7 +32,7 @@ const Search: React.FC = () => {
       <IonContent fullscreen>
       {JsonAlbums.album.map((alb,i) => (
       <><IonCard>
-      <img src={alb.cover}/>
+      <IonImg src={alb.cover}/>
           <IonCardHeader>
             <IonCardSubtitle>{alb.title}</IonCardSubtitle>
             <IonCardTitle>{alb.artist}</IonCardTitle>
