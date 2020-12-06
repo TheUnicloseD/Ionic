@@ -1,0 +1,44 @@
+{
+    "album": [
+		{   
+            "id" : "1",
+            "title": "Rodeo",
+			"artist": "Travis Scott",
+            "date_sortie": "04/09/2015",
+            "length": "65",
+            "nbr_song": "16",
+            "cover": "../assets/image/Rodeo.jpg",
+            "spotify": "https://open.spotify.com/embed/album/4PWBTB6NYSKQwfo79I3prg"
+        },
+		{   
+            "id" : "2",
+            "title": "Dans La Légende",
+			"artist": "PNL",
+            "date_sortie": "16/09/2016",
+            "length": "66",
+            "nbr_song": "16",
+            "cover": "src/assets/image/DLL.jpg",
+            "spotify": "https://open.spotify.com/embed/album/5GFHFEASZeJF0gyWuDDjGE"
+        },
+        {
+            "id" : "3",
+            "title": "Trinity",
+            "artist": "Laylow",
+            "date_sortie": "28/02/2020",
+            "length": "56", 
+            "nbr_song": "22",
+            "cover": "src/assets/image/Trinity.jpg",
+            "spotify": "https://open.spotify.com/embed/album/0JMZmkRaNLaGUWayBrHOMa"
+        },
+        {
+            "id" : "4",
+            "title": "Memories...Do Not Open",
+            "artist": "The Chainsmokers",
+            "date_sortie": "07/04/2017",
+            "length": "43",
+            "nbr_song": "12",
+            "cover": "src/assets/image/Memories.jpg",
+            "spotify": "https://open.spotify.com/embed/album/4JPguzRps3kuWDD5GS6oXr"
+        }
+    ]
+}

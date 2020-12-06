@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
+import Fil from './pages/Fil';
 import Search from './pages/Search';
 import Profil from './pages/Profil';
 import Login from './pages/Login';
@@ -41,18 +41,18 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
+          <Route path="/fil" component={Fil} exact={true} />
           <Route path="/search" component={Search} exact={true} />
           <Route path="/profil" component={Profil} exact={true} />
           <Route path="/login" component={Login}  exact={true} />
           <Route path="/register" component={Register}  exact={true} />
-          <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
+          <Route path="/" render={() => <Redirect to="/fil" />} exact={true} />
 
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="fil" href="/fil">
             <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonLabel>Fil</IonLabel>
           </IonTabButton>
           <IonTabButton tab="search" href="/search">
             <IonIcon icon={ellipse} />

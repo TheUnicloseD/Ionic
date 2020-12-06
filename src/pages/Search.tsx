@@ -4,9 +4,12 @@ import ExploreContainer from '../components/ExploreContainer';
 import {shareAlbum} from '../FirebaseConfig'
 import './Search.css';
 import { toast } from '../Toast';
+import albums from '../assets/json/album.json';
 
 const Search: React.FC = () => {
 
+  const JsonAlbums = albums
+  console.log(JsonAlbums)
   const [busy, setBusy] = useState<boolean>(false)
 
   async function share(value: string) {
@@ -27,18 +30,21 @@ const Search: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-      <IonCard>
-      <img src="https://images-na.ssl-images-amazon.com/images/I/61dVdX2bgIL._SL1000_.jpg" />
+      {JsonAlbums.album.map((alb,i) => (
+      <><IonCard>
+      <img src={alb.cover}/>
           <IonCardHeader>
-            <IonCardSubtitle>Rodeo</IonCardSubtitle>
-            <IonCardTitle>Travis Scott</IonCardTitle>
+            <IonCardSubtitle>{alb.title}</IonCardSubtitle>
+            <IonCardTitle>{alb.artist}</IonCardTitle>
           </IonCardHeader>
 
           <IonCardContent>
-            Gros album sa mère
+            {alb.length}{alb.nbr_song}{alb.date_sortie}
+            <p><iframe src={alb.spotify} width="300" height="380" allow="encrypted-media"></iframe></p>
       </IonCardContent>
-      <IonButton onClick={() => share('Rodeo')}> Partager </IonButton>
-        </IonCard>
+      <IonButton onClick={() => share('{alb.title}')}> Partager </IonButton>
+        </IonCard> </>))}
+      
       </IonContent>
     </IonPage>
   );

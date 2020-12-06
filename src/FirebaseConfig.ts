@@ -1,4 +1,5 @@
 /* Firebase imports */
+import React from 'react'; 
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
@@ -54,20 +55,35 @@ async function saveUser(email: string,username: string,uid: string){
     firebaseRef.child("UserData/"+uid+"/email").set(email);
 }
 
-export async function getAllUser(){
-    let listUsername: Array<string> = [];
+/*export function getAllUser(this: string[]){
+    //var listUsername: Array<string> = [];
+    var self = this
     var firebaseRef = firebase.database().ref("UserData");
-    await firebaseRef.once("value") 
+    //console.log(listUsername)
+    firebaseRef.once("value") 
     .then(function(snapshot) { 
-    snapshot.forEach(function(childSnapshot) { 
+    snapshot.forEach(
+    function(childSnapshot) { 
+     //console.log(listUsername);
      var key = childSnapshot.key;   
      var username = childSnapshot.val().username; 
-     listUsername.push(username)
-    }); 
-})
-console.log(listUsername);
-return listUsername;
+     self.push(username);
+     console.log(self)
+    });
+    
+})   ;
+return self;
 };
+
+export function getAllUser(){
+var ref = firebase.database().ref("UserData");
+ref.on("child_added", function(childSnapshot) {
+  var listUsername: Array<string> = []
+  var username = childSnapshot.val().username;
+  listUsername.push(username);
+});
+console.log(listUsername)}
+*/
 
 export async function shareAlbum(initialValue: string) {
     var firebaseRef = firebase.database().ref();
@@ -86,3 +102,5 @@ export function getUserName(){
         return user.displayName;
     }
 }
+
+export default firebase;
