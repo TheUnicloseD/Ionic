@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.12.9",
     "@capacitor/android": "^2.4.3",
     "@capacitor/core": "2.4.3",
     "@capacitor/ios": "^2.4.3",
@@ -21,6 +22,7 @@
     "@types/react-router": "^5.1.4",
     "@types/react-router-dom": "^5.1.3",
     "firebase": "^8.1.1",
+    "fs": "0.0.1-security",
     "ionicons": "^5.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -28,7 +30,8 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^4.0.1",
-    "typescript": "3.8.3"
+    "tsify": "^5.0.2",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -52,7 +55,13 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.3"
+    "@capacitor/cli": "2.4.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0"
   },
   "description": "An Ionic project"
 }

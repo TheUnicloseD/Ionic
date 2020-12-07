@@ -9,7 +9,10 @@ import user from '../assets/json/user.json';
 const Profil: React.FC = () => {
     const usernames = user
     const userName = getUserName();
-    
+    var infoUsername: { username: string; img_profil: string; age: string; pref_artiste: string; }[] = []
+    if (userName == 'Leo_Le_Hamon'){infoUsername = usernames['Leo_Le_Hamon']}
+    if (userName == 'SKG'){infoUsername = usernames['SKG']}
+    if (userName == 'LebronGOAT'){infoUsername = usernames['LebronGOAT']}
     return (
       <IonPage>
         <IonHeader>
@@ -26,17 +29,16 @@ const Profil: React.FC = () => {
           <ul>
             {userName}
           </ul>
-          <ul>
-      {usernames.user.map((user) => (
-        <><li>{user.username}</li> <img src={user.img_profil}/> <IonButton>Follow</IonButton></>
-      ))}
-    </ul>
-        <IonButton href="/login">
-          Login
-        </IonButton>
-        <IonButton href="/register">
-          Create an account
-        </IonButton>
+            {infoUsername.map((user,i) => (
+      <><p>{user.username}</p><p>{user.age}</p><p>{user.pref_artiste}</p>
+                <img src={user.img_profil} />
+              </>))}
+              <IonButton href="/login">
+                  Login
+                </IonButton>
+                <IonButton href="/register">
+                  Create an account
+                </IonButton>
         </IonContent>
       </IonPage>
     );

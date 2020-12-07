@@ -1,7 +1,6 @@
 {
     "album": [
 		{   
-            "id" : "1",
             "title": "Rodeo",
 			"artist": "Travis Scott",
             "date_sortie": "04/09/2015",
@@ -11,7 +10,6 @@
             "spotify": "https://open.spotify.com/embed/album/4PWBTB6NYSKQwfo79I3prg"
         },
 		{   
-            "id" : "2",
             "title": "Dans La Légende",
 			"artist": "PNL",
             "date_sortie": "16/09/2016",
@@ -21,7 +19,6 @@
             "spotify": "https://open.spotify.com/embed/album/5GFHFEASZeJF0gyWuDDjGE"
         },
         {
-            "id" : "3",
             "title": "Trinity",
             "artist": "Laylow",
             "date_sortie": "28/02/2020",
@@ -31,7 +28,6 @@
             "spotify": "https://open.spotify.com/embed/album/0JMZmkRaNLaGUWayBrHOMa"
         },
         {
-            "id" : "4",
             "title": "Memories...Do Not Open",
             "artist": "The Chainsmokers",
             "date_sortie": "07/04/2017",

@@ -1,25 +1,23 @@
 {
-    "user": [
+    "Leo_Le_Hamon": [
 		{   
-            "id" : "1",
-            "username" : "SKG",
+            "username" : "Leo_Le_Hamon",
 			"img_profil": "",
             "age": "23",
-            "pref_artiste": "Eminem"
-        },
+            "pref_artiste": "Chainsmokers"
+        }],
+    "SKG": [
         {   
-            "id" : "2",
-            "username" : "Uni",
+            "username" : "SKG",
 			"img_profil": "",
             "age": "22",
-            "pref_artiste": "Ateyaba"
-        },
+            "pref_artiste": "Eminem"
+        }],
+    "LebronGOAT": [
         {   
-            "id" : "3",
-            "username" : "leo le hamon",
+            "username" : "LebronGOAT",
 			"img_profil": "",
             "age": "15",
-            "pref_artiste": "Chainsmokers"
-        }
-    ]
+            "pref_artiste": "PNL"
+        }]
 }
