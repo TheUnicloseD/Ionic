@@ -18,11 +18,16 @@ var firebaseConfig = {
   measurementId: "G-F60T0EN8LM"
 };
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
 
 export async function loginUser(username: string, password:string) {
     try{
-        const res = await firebase.auth().signInWithEmailAndPassword(username, password)
+        const auth = firebase.auth()
+        const res = await auth.signInWithEmailAndPassword(username, password)
         console.log(res)
         return true
     } catch (error) {
@@ -53,6 +58,13 @@ async function saveUser(email: string,username: string,uid: string){
     var firebaseRef = firebase.database().ref();
     firebaseRef.child("UserData/"+uid+"/username").set(username);
     firebaseRef.child("UserData/"+uid+"/email").set(email);
+}
+
+export async function logOutUser(){
+    const auth = firebase.auth();
+    auth.signOut().then(() => {
+        console.log('user signed out');
+    });
 }
 
 /*export function getAllUser(this: string[]){
@@ -96,10 +108,10 @@ export async function shareAlbum(initialValue: string) {
     
     };
 
-export function getUserName(){
+export function getEmail(){
     var user = firebase.auth().currentUser;
     if (user) {
-        return user.displayName;
+        return user.email;
     }
 }
 

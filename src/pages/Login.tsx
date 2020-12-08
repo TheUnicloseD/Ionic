@@ -41,7 +41,7 @@ const Login: React.FC = () => {
       <IonRow>
         <IonCol>
           <IonItem>
-            <IonInput placeholder="Email ou nom d'utilisateur"
+            <IonInput placeholder="Email"
                 type="text"
                 value={username}
                 onIonChange={(e:any) => setUsername(e.target.value)}

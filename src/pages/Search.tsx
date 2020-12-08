@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
 import { IonAlert, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import {shareAlbum} from '../FirebaseConfig'
+import {getEmail, shareAlbum} from '../FirebaseConfig'
 import './Search.css';
 import { toast } from '../Toast';
 import albums from '../assets/json/album.json';
+import {share} from './Fil'
 
 const Search: React.FC = () => {
 
   var JsonAlbums = albums
   console.log(JsonAlbums)
   const [busy, setBusy] = useState<boolean>(false)
-
-  async function share(value: string) {
-      setBusy(true)
-      const res = await shareAlbum(value)
-      toast('Album Shared')
-      setBusy(false)
-  }
+  const username = getEmail()
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -114,7 +109,7 @@ const Search: React.FC = () => {
             {alb.length}{alb.nbr_song}{alb.date_sortie}
             <p><iframe src={alb.spotify} width="300" height="380" allow="encrypted-media"></iframe></p>
       </IonCardContent>
-      <IonButton onClick={() => share('{alb.title}')}> Partager </IonButton>
+      <IonButton onClick={() => share(alb.title,alb.artist,alb.date_sortie,alb.length,alb.nbr_song,alb.cover,alb.spotify)}> Partager </IonButton>
         </IonCard> </>))}
       
       </IonContent>

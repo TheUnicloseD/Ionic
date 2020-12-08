@@ -1,13 +1,11 @@
 {
     "posts": [
 		{   
-            "id" : "1",
+            "id": "1",
             "username": "Dimitri du 13",
 			"date": "03/04/2020",
-            "heure": "14:58",
             "album": [
                 {   
-                    "id" : "2",
                     "title": "Dans La Légende",
                     "artist": "PNL",
                     "date_sortie": "16/09/2016",
@@ -19,16 +17,12 @@
             ],
             "comments": [
                 {
-                    "id" : "1",
                     "date" : "03/04/2020",
-                    "heure" : "16:12",
                     "username" : "LebronGoat",
                     "message" : "Alors ton avis"
                 },
                 {
-                    "id" : "2",
                     "date" : "03/04/2020",
-                    "heure" : "16:12",
                     "username" : "Dimitri du 13",
                     "message" : "Franchement lourd l'album "
                 }
@@ -36,13 +30,11 @@
             ]
         },
         {   
-            "id" : "2",
+            "id": "2",
             "username": "SKG",
 			"date": "10/04/2020",
-            "heure": "10:10",
             "album": [
                 {   
-                    "id" : "1",
                     "title": "Rodeo",
                     "artist": "Travis Scott",
                     "date_sortie": "04/09/2015",
@@ -54,16 +46,12 @@
             ],
             "comments": [
                 {
-                    "id" : "1",
                     "date" : "10/04/2020",
-                    "heure" : "10:40",
                     "username" : "LebronGoat",
                     "message" : "Mieux que Astroworld ?"
                 },
                 {
-                    "id" : "2",
                     "date" : "03/04/2020",
-                    "heure" : "11:12",
                     "username" : "SKG",
                     "message" : "oui largement"
                 }
@@ -71,13 +59,11 @@
             ]
         },
         {   
-            "id" : "3",
+            "id": "3",
             "username": "leo le hamon",
 			"date": "21/10/2020",
-            "heure": "23:30",
             "album": [
                 {
-                    "id" : "4",
                     "title": "Memories...Do Not Open",
                     "artist": "The Chainsmokers",
                     "date_sortie": "07/04/2017",
@@ -89,16 +75,12 @@
             ],
             "comments": [
                 {
-                    "id" : "1",
                     "date" : "21/10/2020",
-                    "heure" : "23:42",
                     "username" : "Uni",
                     "message" : "nul Chainsmokers"
                 },
                 {
-                    "id" : "2",
                     "date" : "21/10/2020",
-                    "heure" : "23:46",
                     "username" : "leo le hamon",
                     "message" : "arrete un peu"
                 }
