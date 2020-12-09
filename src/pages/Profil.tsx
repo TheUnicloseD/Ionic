@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonAlert, IonBadge, IonButton, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonAlert, IonBadge, IonButton, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Profil.css';
 import firebase from '../FirebaseConfig';
@@ -112,7 +112,7 @@ const Profil: React.FC = () => {
         />
             {infoUsername.map((user,i) => (
       <><p>{user.username}</p><p>{user.age}</p><p>{user.pref_artiste}</p>
-                <img src={user.img_profil} />
+                <IonImg src={user.img_profil} />
               </>))}
                 {logInButton()}
                 {logOutButton()}

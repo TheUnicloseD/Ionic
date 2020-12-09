@@ -2,7 +2,7 @@
     "Leo_Le_Hamon": [
 		{   
             "username" : "Leo_Le_Hamon",
-			"img_profil": "",
+			"img_profil": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Male_mallard_standing.jpg",
             "age": "23",
             "pref_artiste": "Chainsmokers",
             "following": ["SKG","LebronGOAT","DimitriDu13","Uni","34USA"],
@@ -11,7 +11,7 @@
     "SKG": [
         {   
             "username" : "SKG",
-			"img_profil": "",
+			"img_profil": "https://static.wikia.nocookie.net/youtuberfrancais/images/2/21/182158-1550072708.jpg/revision/latest/smart/width/200/height/200?cb=20201207223106&path-prefix=fr",
             "age": "22",
             "pref_artiste": "Eminem",
             "following": ["Leo_Le_Hamon","LebronGOAT","Uni"],
@@ -20,7 +20,7 @@
     "LebronGOAT": [
         {   
             "username" : "LebronGOAT",
-			"img_profil": "",
+			"img_profil": "https://www.parlons-basket.com/wp-content/uploads/2020/01/lebron-james-lakers-nba-4.jpg",
             "age": "15",
             "pref_artiste": "PNL",
             "following": ["SKG","Leo_Le_Hamon","DimitriDu13","Uni","34USA","Cat3"],
