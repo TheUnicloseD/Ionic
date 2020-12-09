@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonInput, IonButton } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonInput, IonButton, IonText } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Fil.css';
 import AddItem from '../AddItem';
@@ -29,7 +29,7 @@ export function share(title: string,artist: string,date_sortie: string, length: 
   const username = setUsername();
   let date = Date();
   let dateLoc = date.toLocaleString()
-  JsonPosts["posts"].push({id: (Math.random()*1000).toString(),username: username, date: dateLoc, album: [
+  JsonPosts["posts"].unshift({id: (Math.random()*1000).toString(),username: username, date: dateLoc, album: [
         {   
             title: title,
             artist: artist,
@@ -57,21 +57,13 @@ function saveComment(id: number){
   var saisie = (document.getElementById("comment"+id) as HTMLInputElement).value;
   console.log(saisie)
   if(saisie){
-  JsonPosts["posts"][id]["comments"].push({date: dateLoc,username: username ,message: saisie})
+  JsonPosts["posts"][id]["comments"].unshift({date: dateLoc,username: username ,message: saisie})
 }}
-const Fil: React.FC = () => {
 
-  const [busy, setBusy] = useState<boolean>(false)
-
-  return (
-    <IonPage>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large" id="titreInsta">InstaSound</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        {JsonPosts.posts.map((post,i) => (
+function isLogIn(){
+  const email = getEmail();
+  if (email){
+    return <>{JsonPosts.posts.map((post,i) => (
       <><IonCard>
           <IonCardHeader>
             <IonCardSubtitle>{post.username}</IonCardSubtitle>
@@ -87,7 +79,27 @@ const Fil: React.FC = () => {
             <><p>{comment.date} </p><p>{comment.username}: {comment.message}</p></>
           ))}
             </IonCardContent>
-        </IonCard> </>))}
+        </IonCard> </>))} </>
+  }
+  else{
+    return <><IonText> You need to log in to acess to this page !</IonText>
+    <IonButton href="/login">LOGIN</IonButton></>
+  }
+}
+
+const Fil: React.FC = () => {
+
+  const [busy, setBusy] = useState<boolean>(false)
+
+  return (
+    <IonPage>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large" id="titreInsta">InstaSound</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        {isLogIn()}
       </IonContent>
     </IonPage>
   );

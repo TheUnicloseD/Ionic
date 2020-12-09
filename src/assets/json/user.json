@@ -4,20 +4,26 @@
             "username" : "Leo_Le_Hamon",
 			"img_profil": "",
             "age": "23",
-            "pref_artiste": "Chainsmokers"
+            "pref_artiste": "Chainsmokers",
+            "following": ["SKG","LebronGOAT","DimitriDu13","Uni","34USA"],
+            "followers": ["SKG","LebronGOAT","34USA","PostMalone75","Lea_La_Hamon","Cat3","MessiFootix"]
         }],
     "SKG": [
         {   
             "username" : "SKG",
 			"img_profil": "",
             "age": "22",
-            "pref_artiste": "Eminem"
+            "pref_artiste": "Eminem",
+            "following": ["Leo_Le_Hamon","LebronGOAT","Uni"],
+            "followers": ["Leo_Le_Hamon","LebronGOAT","34USA","PostMalone75","Dog08","CR7 Footix"]
         }],
     "LebronGOAT": [
         {   
             "username" : "LebronGOAT",
 			"img_profil": "",
             "age": "15",
-            "pref_artiste": "PNL"
+            "pref_artiste": "PNL",
+            "following": ["SKG","Leo_Le_Hamon","DimitriDu13","Uni","34USA","Cat3"],
+            "followers": ["SKG","Leo_Le_Hamon","Cat3","MessiFootix"]
         }]
 }

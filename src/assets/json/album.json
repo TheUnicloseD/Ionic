@@ -6,7 +6,7 @@
             "date_sortie": "04/09/2015",
             "length": "65",
             "nbr_song": "16",
-            "cover": "../assets/image/Rodeo.jpg",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/61dVdX2bgIL._SL1000_.jpg",
             "spotify": "https://open.spotify.com/embed/album/4PWBTB6NYSKQwfo79I3prg"
         },
 		{   
@@ -15,7 +15,7 @@
             "date_sortie": "16/09/2016",
             "length": "66",
             "nbr_song": "16",
-            "cover": "../image/DLL.jpg",
+            "cover": "https://i.pinimg.com/originals/65/c1/c3/65c1c34969cb353a1a6347bfda9fd322.jpg",
             "spotify": "https://open.spotify.com/embed/album/5GFHFEASZeJF0gyWuDDjGE"
         },
         {
@@ -24,7 +24,7 @@
             "date_sortie": "28/02/2020",
             "length": "56", 
             "nbr_song": "22",
-            "cover": "src/assets/image/Trinity.jpg",
+            "cover": "https://images.genius.com/a5e5292abde0f79f3f1adef744dff3f1.654x654x1.png",
             "spotify": "https://open.spotify.com/embed/album/0JMZmkRaNLaGUWayBrHOMa"
         },
         {
@@ -33,7 +33,7 @@
             "date_sortie": "07/04/2017",
             "length": "43",
             "nbr_song": "12",
-            "cover": "src/assets/image/Memories.jpg",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/61hf-fyFxJL._SL1420_.jpg",
             "spotify": "https://open.spotify.com/embed/album/4JPguzRps3kuWDD5GS6oXr"
         }
     ]
