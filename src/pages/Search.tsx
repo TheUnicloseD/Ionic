@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonAlert, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAlert, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonPage, IonSearchbar, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import {getEmail, shareAlbum} from '../FirebaseConfig'
 import './Search.css';
@@ -28,6 +28,7 @@ const Search: React.FC = () => {
       return <><IonHeader>
       <IonToolbar>
         <IonTitle>Search</IonTitle>
+        <IonSearchbar placeholder="Search Album"></IonSearchbar>
         <IonButton onClick={() => setShowAlert(true)} expand="block">Add Album</IonButton>
       </IonToolbar>
     </IonHeader>

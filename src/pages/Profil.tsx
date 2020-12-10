@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { IonAlert, IonBadge, IonButton, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonAlert, IonBadge, IonButton, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonRouterOutlet, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Profil.css';
 import firebase from '../FirebaseConfig';
 import { getEmail, logOutUser} from '../FirebaseConfig';
 import user from '../assets/json/user.json';
 import { moon } from 'ionicons/icons';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Route, useHistory } from 'react-router-dom';
+import { IonReactRouter } from '@ionic/react-router';
+import Follow from './Follow';
 
 const Profil: React.FC = () => {
 
-    const history = useHistory;
     const [showAlert, setShowAlert] = useState(false);
 
     const toggleDarkModeHandler = () => {
@@ -49,6 +50,7 @@ const Profil: React.FC = () => {
       const email = getEmail();
       if(email){
         return <><IonList>
+        <Link to='/follow'>
         <IonItem>
           <IonLabel>Followers</IonLabel>
           <IonBadge slot="end">{nbr_followers()}</IonBadge>
@@ -57,6 +59,7 @@ const Profil: React.FC = () => {
           <IonLabel>Following</IonLabel>
           <IonBadge slot="end">{nbr_following()}</IonBadge>
         </IonItem>
+        </Link>
         </IonList></>
       }
     }
@@ -111,8 +114,8 @@ const Profil: React.FC = () => {
           ]}
         />
             {infoUsername.map((user,i) => (
-      <><p>{user.username}</p><p>{user.age}</p><p>{user.pref_artiste}</p>
-                <IonImg src={user.img_profil} />
+      <><div key={i}><p>{user.username}</p><p>{user.age}</p><p>{user.pref_artiste}</p>
+                <IonImg src={user.img_profil} /> </div>
               </>))}
                 {logInButton()}
                 {logOutButton()}
