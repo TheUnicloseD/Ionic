@@ -34,9 +34,10 @@ function displayFollowing(){
           <IonBackButton defaultHref='/profil'/> 
         </IonButtons>
       <IonSearchbar placeholder="Search users..."></IonSearchbar>
+      
         <IonContent>
-              
-          <IonTitle id="titleFollowing">All Following</IonTitle>
+        <h3 id="titleFollowing">All Following</h3>
+          
             {displayFollowing()}     
     
     </IonContent>

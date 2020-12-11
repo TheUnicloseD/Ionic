@@ -35,7 +35,7 @@ function displayFollowers(){
       <IonSearchbar placeholder="Search users..."></IonSearchbar>
         <IonContent>
               
-          <IonTitle id="titleFollowers">All Followers</IonTitle>
+        <h3 id="titleFollowers">All Followers</h3>
             {displayFollowers()}     
     
     </IonContent>

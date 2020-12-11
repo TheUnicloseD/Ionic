@@ -75,3 +75,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#imgUser {
+    height: 90px;
+    width: 90px;
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

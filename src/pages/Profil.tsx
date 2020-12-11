@@ -86,7 +86,7 @@ const Profil: React.FC = () => {
           {
             name: 'artist',
             type: 'text',
-            placeholder: 'Profil Image'
+            placeholder: 'Profile Image'
           },]}
           buttons={[
             {
@@ -154,7 +154,7 @@ const Profil: React.FC = () => {
                       </IonRow>
                       </IonGrid>
                 </div>
-                <IonButton id="editProfil" onClick={() => setShowAlert1(true)} expand="block">Edit Profile</IonButton>
+                <button id="editProfil" onClick={() => setShowAlert1(true)} >Edit Profile</button>
               </>))}
               
     </IonContent>

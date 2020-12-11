@@ -1,11 +1,20 @@
 #listFollowers, #listFollowing {
     list-style-type: none;
+    text-decoration: none;
+    color: black;
 }
 
 #spacebtwFollowers, #spacebtwFollowing {
     margin-top: 5px;
+    text-decoration: none;
+    color: black;
 }
 
 ion-back-button {
     --color: #3880ff;
 }
+
+#titleFollowing {
+    margin-left: 15px;
+} 
+
