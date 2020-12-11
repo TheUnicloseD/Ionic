@@ -4,6 +4,6 @@ Nous avons enlevé tout les fichers présent dans le "git ignore" car on avais e
 
 Pour lancer le projet, il suffit d'installer ionic (npm install ionic) et de lancer la commande "ionic serve" en se placant dans le dossier de l'application. 
 
-Si besoin voici les identifiants des comptes qu'on a crée pour la démo : 
+Si besoin voici les identifiants avec le mot de passe des comptes qu'on a crée pour la démo : 
 s.k@skg.fr / Lebron
 leo.hamon@h.com / LeoLeo
