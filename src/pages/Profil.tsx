@@ -14,6 +14,7 @@ import Followers from './Followers';
 const Profil: React.FC = () => {
 
     const [showAlert, setShowAlert] = useState(false);
+    const [showAlert1, setShowAlert1] = useState(false);
 
     const toggleDarkModeHandler = () => {
       document.body.classList.toggle("dark");
@@ -71,6 +72,40 @@ const Profil: React.FC = () => {
 
     return (
       <IonPage>
+        <IonAlert
+        isOpen={showAlert1}
+        onDidDismiss={() => setShowAlert1(false)}
+        cssClass='my-custom-class'
+        header={'Edit Profile'}
+        inputs={[
+          {
+            name: 'title',
+            type: 'text',
+            placeholder: 'Favorite Artist'
+          },
+          {
+            name: 'artist',
+            type: 'text',
+            placeholder: 'Profil Image'
+          },]}
+          buttons={[
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              cssClass: 'secondary',
+              handler: () => {
+                console.log('Confirm Cancel');
+              }
+            },
+            {
+              text: 'Ok',
+              handler: () => {
+                console.log('Confirm Ok');
+                ;
+              }
+            }
+          ]}
+      />
           <IonContent>
           <IonList className="ion-margin-top">
           <IonItem>
@@ -119,7 +154,7 @@ const Profil: React.FC = () => {
                       </IonRow>
                       </IonGrid>
                 </div>
-                <div id="editProfil">Edit profile</div>
+                <IonButton id="editProfil" onClick={() => setShowAlert1(true)} expand="block">Edit Profile</IonButton>
               </>))}
               
     </IonContent>
