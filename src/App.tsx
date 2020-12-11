@@ -16,7 +16,8 @@ import Search from './pages/Search';
 import Profil from './pages/Profil';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Follow from './pages/Follow';
+import Following from './pages/Following';
+import Followers from './pages/Followers';
 import User from './pages/User';
 
 /* Core CSS required for Ionic components to work properly */
@@ -48,7 +49,8 @@ const App: React.FC = () => (
           <Route path="/profil" component={Profil} exact={true} />
           <Route path="/login" component={Login}  exact={true} />
           <Route path="/register" component={Register}  exact={true} />
-          <Route path="/follow" component={Follow}  exact={true} />
+          <Route path="/following" component={Following}  exact={true} />
+          <Route path="/followers" component={Followers}  exact={true} />
           <Route path="/user" component={User}  exact={true} />
           <Route path="/" render={() => <Redirect to="/fil" />} exact={true} />
 

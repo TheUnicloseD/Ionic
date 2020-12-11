@@ -8,7 +8,8 @@ import user from '../assets/json/user.json';
 import { moon } from 'ionicons/icons';
 import { Link, Route, useHistory } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
-import Follow from './Follow';
+import Following from './Following';
+import Followers from './Followers';
 
 const Profil: React.FC = () => {
 
@@ -51,11 +52,13 @@ const Profil: React.FC = () => {
       const email = getEmail();
       if(email){
         return <><IonList>
-        <Link to='/follow'>
+        <Link to='/followers'>
         <IonItem>
           <IonLabel>Followers</IonLabel>
           <IonBadge slot="end">{nbr_followers()}</IonBadge>
         </IonItem>
+        </Link>
+        <Link to="/following">
         <IonItem>
           <IonLabel>Following</IonLabel>
           <IonBadge slot="end">{nbr_following()}</IonBadge>
