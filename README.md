@@ -7,3 +7,7 @@ Pour lancer le projet, il suffit d'installer ionic (npm install ionic) et de lan
 Si besoin voici les identifiants avec le mot de passe des comptes qu'on a crée pour la démo : 
 s.k@skg.fr / Lebron
 leo.hamon@h.com / LeoLeo
+
+Pour la fonctionnalité Add Album, il faut prendre le lien "code embeed" des albums/singles Spotify (ci contre celui utilisé pendant la demo : https://open.spotify.com/embed/album/4yrYIH9dGbP75771NBeRO6)
+
+N'hésitez pas à nous contacter si vous rencontrer un problème dont nous n'aurions pas parlé ou pour tout autre information. 
