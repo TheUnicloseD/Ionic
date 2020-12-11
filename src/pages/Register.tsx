@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage,IonButton, IonTitle, IonToolbar, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonItem, IonInput, IonBadge, IonRouterOutlet, IonRow, IonCol, IonLoading  } from '@ionic/react';
+import { IonContent, IonHeader, IonPage,IonButton, IonList, IonTitle, IonToolbar, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonItem, IonInput, IonBadge, IonRouterOutlet, IonRow, IonCol, IonLoading  } from '@ionic/react';
 import React, { useState } from 'react';
 import { book, search, person,personCircle } from 'ionicons/icons';
 import { Link } from 'react-router-dom';
@@ -39,71 +39,63 @@ const Register: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Register</IonTitle>
-        </IonToolbar>
         <IonLoading message="Registration in progress..." duration={0} isOpen={busy}/>
       </IonHeader>
-      <IonRow>
-        <IonCol>
-          <IonIcon
-            style={{ fontSize: "70px", color: "#0040ff" }}
-            icon={personCircle}
-          />
-          </IonCol>
-      </IonRow>
+      <IonContent id="contentLogin">
+      <IonList>
+     
       <IonRow>
         <IonCol>
           <IonItem>
-            <IonLabel position="floating"> Username </IonLabel>
-              <IonInput
+            <IonTitle size="large" class="titreInstaLogin">InstaSound</IonTitle>
+          </IonItem>
+        </IonCol>
+      </IonRow>
+
+      <IonRow>
+        <IonCol>
+              <IonInput class="input1" placeholder="Username"
                 type="text"
                 value={username}
                 onIonChange={(e:any) => setUsername(e.target.value)}
               >
               </IonInput>
-          </IonItem>
         </IonCol>
       </IonRow>
+
       <IonRow>
         <IonCol>
-          <IonItem>
-            <IonLabel position="floating"> Email </IonLabel>
-              <IonInput
+              <IonInput class="inputSous" placeholder="Email"
                 type="text"
                 value={email}
                 onIonChange={(e:any) => setEmail(e.target.value)}
               >
               </IonInput>
-          </IonItem>
         </IonCol>
       </IonRow>
+
       <IonRow>
         <IonCol>
-          <IonItem>
-            <IonLabel position="floating"> Password </IonLabel>
-              <IonInput
+              <IonInput class="inputSous" placeholder="Password"
                 type="password"
                 value={password}
                 onIonChange={(e:any) => setPassword(e.target.value)}
               >
               </IonInput>
-          </IonItem>
         </IonCol>
       </IonRow>
+
       <IonRow>
         <IonCol>
-          <IonItem>
-            <IonLabel position="floating"> Confirm Password </IonLabel>
-              <IonInput
+              <IonInput class="inputSous" placeholder="Confirm password"
                 type="password"
                 value={cpassword}
                 onIonChange={(e:any) => setCPassword(e.target.value)}
               >
               </IonInput>
-          </IonItem>
         </IonCol>
       </IonRow>
+
       <IonRow>
       <IonCol>
           <IonButton onClick={RegisterUser} expand="block">
@@ -111,9 +103,12 @@ const Register: React.FC = () => {
           </IonButton>
         </IonCol>
       </IonRow>
-      <p> 
+
+      <p id="pSignup" style={{ fontSize: "medium" }}> 
           Already have an account? <Link to="/login"> Login </Link>
       </p>
+      </IonList>
+      </IonContent>
     </IonPage>
   );
 };

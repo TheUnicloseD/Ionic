@@ -1,0 +1,47 @@
+.btnShare {
+    
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   
+   width: 100%;
+    margin: auto;
+  }
+
+ #cardHeaderSearch {
+   text-align: center;
+ }
+
+ #btnAddAlbum {
+
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   width: 90%;
+    margin: auto;
+  }
+
+  #btnLoginSearch {
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   width: 90%;
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+ 

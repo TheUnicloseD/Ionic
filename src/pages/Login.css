@@ -1,5 +1,55 @@
-#titreInstaLogin {
-    font-family: 'Brush Script MT', serif;
+.titreInstaLogin {
+    font-family: 'Comic Sans MS';
     text-align: center;
     font-size: 200%;
+    color:black;
+    width: 90%;
+    margin: auto;
+}
+
+.input1 {
+    background-color: whitesmoke;
+    opacity: 0.8;
+    text-align: center;
+    margin-top: 80px;
+    width: 90%;
+    margin: auto;
+}
+
+.inputSous {
+    background-color: whitesmoke;
+    opacity: 0.8;
+    text-align: center;
+    margin-top: 5px;   
+    width: 90%;
+    margin: auto;
+}
+
+
+#contentLogin {
+    top: 25%;
+}
+
+#btnLogin {
+    
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   
+   width: 90%;
+    margin: auto;
+  }
+
+#pSignup {
+    text-align: center;
+  }
+
+#pForgotLogin {
+    text-align: center;
+    text-decoration: none!important;
+    
 }

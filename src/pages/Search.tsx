@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { IonAlert, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonPage, IonSearchbar, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAlert, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonPage, IonSearchbar, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import {getEmail, shareAlbum} from '../FirebaseConfig'
 import './Search.css';
 import { toast } from '../Toast';
 import albums from '../assets/json/album.json';
 import {share} from './Fil'
+import { shareSocialOutline } from 'ionicons/icons';
 
 const Search: React.FC = () => {
 
@@ -25,14 +26,11 @@ const Search: React.FC = () => {
   function isLogIn(){
     const email = getEmail();
     if (email){
-      return <><IonHeader>
-      <IonToolbar>
-        <IonTitle>Search</IonTitle>
+      return <>
         <IonSearchbar placeholder="Search Album"></IonSearchbar>
-        <IonButton onClick={() => setShowAlert(true)} expand="block">Add Album</IonButton>
-      </IonToolbar>
-    </IonHeader>
-    <IonContent fullscreen>
+        <IonButton id="btnAddAlbum" onClick={() => setShowAlert(true)} expand="block">Add Album</IonButton>
+  
+    <IonContent >
     <IonAlert
         isOpen={showAlert}
         onDidDismiss={() => setShowAlert(false)}
@@ -97,24 +95,27 @@ const Search: React.FC = () => {
       />
     {JsonAlbums.album.map((alb,i) => (
     <><IonCard>
-    <IonImg src={alb.cover} alt="dfdfd" />
-        <IonCardHeader>
-          <IonCardSubtitle>{alb.title}</IonCardSubtitle>
-          <IonCardTitle>{alb.artist}</IonCardTitle>
-        </IonCardHeader>
-
-        <IonCardContent>
-          {alb.length}{alb.nbr_song}{alb.date_sortie}
-          <p><iframe src={alb.spotify} width="300" height="380" allow="encrypted-media"></iframe></p>
-    </IonCardContent>
-    <IonButton onClick={() => share(alb.title,alb.artist,alb.date_sortie,alb.length,alb.nbr_song,alb.cover,alb.spotify)}> Partager </IonButton>
+      <IonImg src={alb.cover} alt="Images cover" />
+      <IonCardHeader id="cardHeaderSearch">
+      <IonCardTitle>{alb.title}</IonCardTitle>
+      <IonCardSubtitle>Album par {alb.artist} - {alb.date_sortie}</IonCardSubtitle>
+      </IonCardHeader>
+      <IonCardContent>
+        <p id="iframeSearch"><iframe src={alb.spotify} width="100%" height="300" allow="encrypted-media"></iframe></p>
+        <p>{alb.date_sortie}</p>
+        <p>{alb.nbr_song} titres | {alb.length} min</p>
+      </IonCardContent>
+      
+    <IonButton class="btnShare" onClick={() => share(alb.title,alb.artist,alb.date_sortie,alb.length,alb.nbr_song,alb.cover,alb.spotify)}> 
+    <IonIcon icon={shareSocialOutline} /> Share  </IonButton>
       </IonCard> </>))}
     
     </IonContent> </>
     }
     else{
-      return <><IonText> You need to log in to acess to this page !</IonText>
-      <IonButton href="/login">LOGIN</IonButton></>
+      return <>
+      <IonButton id="btnLoginSearch" href="/login">Login</IonButton>
+      <div id="textLoggedIn"> You must be logged in to access this page.</div></>
     }
   }
   

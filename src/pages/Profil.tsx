@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonAlert, IonBadge, IonButton, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonRouterOutlet, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonFooter, IonCol, IonRow, IonGrid,IonAlert, IonBadge, IonButton, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonRouterOutlet, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Profil.css';
 import firebase from '../FirebaseConfig';
@@ -20,19 +20,20 @@ const Profil: React.FC = () => {
 
     function logOutButton(){
       const email = getEmail();
-      if (email){return <IonButton onClick={() => setShowAlert(true)} expand="block">
+      if (email){return <IonButton id="btnLogoutProfil" onClick={() => setShowAlert(true)} expand="block">
       Logout
     </IonButton>}
     }
 
     function logInButton(){
       const email = getEmail();
-      if (!email){return <><IonButton href="/login">
+      if (!email){return <>
+      <IonButton id="btnLoginProfil" href="/login">
         Login
       </IonButton>
-        <IonButton href="/register">
+      <IonButton id="btnCreateProfil" href="/register">
           Create an account
-        </IonButton></>}
+      </IonButton></>}
     }
 
     const usernames = user
@@ -67,29 +68,19 @@ const Profil: React.FC = () => {
 
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Profil</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent fullscreen>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Profil</IonTitle>
-            </IonToolbar>
-          </IonHeader>
+          <IonContent>
           <IonList className="ion-margin-top">
           <IonItem>
             <IonIcon slot="start" icon={moon} />
             <IonLabel>Dark Mode</IonLabel>
-            <IonToggle
+            <IonToggle id="toggleDarkMode"
               slot="end"
               name="darkMode"
               onIonChange={toggleDarkModeHandler}
             />
           </IonItem>
         </IonList>
-        {followDisplay()}
+        
           <IonAlert
           isOpen={showAlert}
           onDidDismiss={() => setShowAlert(false)}
@@ -114,13 +105,29 @@ const Profil: React.FC = () => {
           ]}
         />
             {infoUsername.map((user,i) => (
-      <><div key={i}><p>{user.username}</p><p>{user.age}</p><p>{user.pref_artiste}</p>
-                <IonImg src={user.img_profil} /> </div>
+      <><div key={i} id="gridProfil"><IonGrid>
+                      <IonRow>
+                        <IonCol size="4"><IonImg id="imgProfil" src={user.img_profil} /></IonCol>
+                        <IonCol size="8">{followDisplay()}</IonCol>
+                      </IonRow>
+                      <IonRow>
+                        <IonCol size="" id="nameProfil"><b>{user.username}</b> <br/> {user.age + " years"}</IonCol>
+                        <IonCol size="">Favorite artist <b>{user.pref_artiste}</b></IonCol>
+                      </IonRow>
+                      </IonGrid>
+                </div>
+                <div id="editProfil">Edit profile</div>
               </>))}
-                {logInButton()}
-                {logOutButton()}
-        </IonContent>
-      </IonPage>
+              
+    </IonContent>
+
+    <IonFooter className="ion-no-border">
+      <IonToolbar>{logOutButton()} </IonToolbar>
+    </IonFooter>
+    
+    {logInButton()}
+        
+    </IonPage>
     );
   }
 

@@ -25,8 +25,8 @@ function displayFollowers(){
         if (email == 's.k@skg.fr'){infoUsername = usernames['SKG']}
         if (email == 'harden@mail.fr'){infoUsername = usernames['LebronGOAT']}
         const followers = infoUsername.map((user,i) => user.followers)
-        return <><ul>{followers[0].map((user,i) => (
-          <><li key={i}>{user}</li></>
+        return <><ul id="listFollowers">{followers[0].map((user,i) => (
+          <><li key={i} id="spacebtwFollowers">{user}</li></>
         ))}</ul></>}}
 
 function displayFollowing(){ 
@@ -42,27 +42,24 @@ function displayFollowing(){
               if (email == 'harden@mail.fr'){infoUsername = usernames['LebronGOAT']}
               const following = infoUsername.map((user,i) => user.following)
               console.log(following[0])
-              return <><ul>{following[0].map((user,i) => (
-                <><li key={i}>{user}</li></>
+              return <><ul id="listFollowing">{following[0].map((user,i) => (
+                <><li key={i} id="spacebtwFollowing">{user}</li></>
               ))}</ul></>}}
     return (<IonPage>
       <IonButtons slot="start">
-          <IonBackButton defaultHref='/profil'/>  
+          <IonBackButton defaultHref='/profil'/> 
         </IonButtons>
-      <IonSearchbar placeholder="Search User"></IonSearchbar>
+      <IonSearchbar placeholder="Search users..."></IonSearchbar>
         <IonContent>
-    <IonGrid>
-      <IonRow>
-        <IonCol>
-          <IonTitle>Followers</IonTitle>
+    
+          <IonTitle id="titleFollowers">All Followers</IonTitle>
+          <IonContent>
             {displayFollowers()}
-        </IonCol>
-        <IonCol>
-          <IonTitle>Following</IonTitle>
+              
+          <IonTitle id="titleFollowing">All Following</IonTitle>
             {displayFollowing()}
-        </IonCol>
-      </IonRow>
-    </IonGrid>
+            </IonContent>      
+    
     </IonContent>
     </IonPage>
 

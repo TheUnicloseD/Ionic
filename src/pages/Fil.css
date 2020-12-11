@@ -1,3 +1,63 @@
 #titreInsta {
-    font-family: 'Brush Script MT', serif;
+    
+    font-family: 'Comic Sans MS';
+    
+    font-size: 200%;
+    color:black;
+    width: 90%;
+    margin: auto;
+}
+
+#titreAlbum, #cardHeaderFil {
+    font-weight: bold;
+}
+
+#viewAllCom {
+    color: #3880ff;
+    text-decoration: none;
+}
+
+#addCommentInline {
+    margin-top: 10px;
+    display: inline-flex;
+    color: #3880ff;
+}
+
+#btnSendComment{
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    height: 50px;
+    --border-radius: 0;
+    padding: 15px 0;
+   width:20%;
+    margin: auto;
+}
+
+#btnLoginFil {
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   width: 90%;
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#textLoggedIn {
+    text-align: center;
+    color: #C13584;
+    width: 90%;
+    margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

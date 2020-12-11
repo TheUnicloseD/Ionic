@@ -1,4 +1,4 @@
-import { IonContent, IonLoading, IonHeader, IonPage,IonButton, IonTitle, IonToolbar, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonItem, IonInput, IonBadge, IonRouterOutlet, IonRow, IonCol } from '@ionic/react';
+import { IonContent, IonLoading, IonHeader, IonPage,IonButton, IonTitle, IonToolbar, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonItem, IonInput, IonBadge, IonRouterOutlet, IonRow, IonCol, IonList } from '@ionic/react';
 import React, { useState } from 'react';
 import { book, search, person,personCircle } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
@@ -28,50 +28,57 @@ const Login: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Login</IonTitle>
-        </IonToolbar>
       </IonHeader>
       <IonLoading message="Please Wait..." duration={0} isOpen={busy}/>
-      <IonRow>
-        <IonCol>
-          <IonTitle size="large" id="titreInstaLogin">InstaSound</IonTitle>
-        </IonCol>
-      </IonRow>
+      <IonContent id="contentLogin">
+      <IonList>
       <IonRow>
         <IonCol>
           <IonItem>
-            <IonInput placeholder="Email"
+            <IonTitle size="large" class="titreInstaLogin">InstaSound</IonTitle>
+          </IonItem>
+        </IonCol>
+      </IonRow>
+        
+     
+      <IonRow>
+        <IonCol>
+            <IonInput class="input1" placeholder="Email"
                 type="text"
                 value={username}
                 onIonChange={(e:any) => setUsername(e.target.value)}
               >
               </IonInput>
-          </IonItem>
         </IonCol>
       </IonRow>
+
       <IonRow>
         <IonCol>
-          <IonItem>
-              <IonInput placeholder="Mot de passe"
+              <IonInput class="inputSous" placeholder="Password"
                 type="password"
                 value={password}
                 onIonChange={(e:any) => setPassword(e.target.value)}
               >
               </IonInput>
-          </IonItem>
         </IonCol>
       </IonRow>
+
       <IonRow>
-      <IonCol>
-          <IonButton onClick={login} expand="block">
+        <IonCol>
+          <IonButton id="btnLogin" onClick={login} expand="block">
             Login
           </IonButton>
-        <p style={{ fontSize: "medium" }}>
-        Don't have an account? <a href="/register">Sign up!</a>
-        </p>
+          <p id="pForgotLogin" style={{ fontSize: "small" }}>
+          Forgot your login details? <a href=""> Get help signing in.</a>
+          </p>
+          <p id="pSignup" style={{ fontSize: "medium" }}>
+            Don't have an account? <a href="/register">Sign up.</a>
+          </p>
         </IonCol>
       </IonRow>
+
+      </IonList>
+      </IonContent>
     </IonPage>
   );
 };

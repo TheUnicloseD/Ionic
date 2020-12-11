@@ -1,0 +1,11 @@
+#listFollowers, #listFollowing {
+    list-style-type: none;
+}
+
+#spacebtwFollowers, #spacebtwFollowing {
+    margin-top: 5px;
+}
+
+ion-back-button {
+    --color: #3880ff;
+}

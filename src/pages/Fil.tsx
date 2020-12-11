@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonInput, IonButton, IonText } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonInput, IonButton, IonText, IonIcon, IonItem, IonLabel } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Fil.css';
 import AddItem from '../AddItem';
@@ -8,6 +8,7 @@ import { toast } from '../Toast';
 import posts from '../assets/json/posts.json';
 import { cpuUsage } from 'process';
 import { getEmail } from '../FirebaseConfig';
+import { chatboxOutline, chatbubbleOutline, heartCircle, heartOutline, personCircle } from 'ionicons/icons';
 
 function setUsername(){
   const email = getEmail();
@@ -65,25 +66,41 @@ function isLogIn(){
   if (email){
     return <>{JsonPosts.posts.map((post,i) => (
       <><IonCard>
-          <IonCardHeader>
-            <IonCardSubtitle>{post.username}</IonCardSubtitle>
+          <IonCardHeader id="cardHeaderFil">
+          <IonItem>
+          <IonIcon size="large" icon={personCircle} /> 
+          <IonLabel>{post.username}</IonLabel>
+          </IonItem>
           </IonCardHeader>
+          
           <IonCardContent>
           {post.album.map((alb,i) => (
-              <><div id="truc">{alb.title}</div>
-              <IonImg src={alb.cover} alt="dfdfd" /></>
+              <>
+              <IonImg src={alb.cover} alt="dfdfd" />
+              <IonIcon size="large" icon={heartOutline} /> <IonIcon size="large" icon={chatboxOutline} />
+              <div id="titreAlbum">{alb.title}</div></>
             ))}
-          <IonInput id={"comment"+i} type="text" placeholder="Make a comment"></IonInput>
-          <IonButton onClick={() => saveComment(i)}>Send Comment</IonButton>
+          <a id="viewAllCom" href="/">View all comments</a>
           {post.comments.map((comment,i) => (
-            <><p>{comment.date} </p><p>{comment.username}: {comment.message}</p></>
+            <><p><b>{comment.username + " "} </b> {" " + comment.message}</p></>
           ))}
+          
+          <div id="addCommentInline">
+          
+          <IonInput id={"comment"+i} type="text" placeholder="Add a comment..."></IonInput>
+          
+          <IonButton id="btnSendComment" onClick={() => saveComment(i)}>Post</IonButton>
+          </div>
+          <br/>
+          {post.date}
+          
             </IonCardContent>
         </IonCard> </>))} </>
   }
   else{
-    return <><IonText> You need to log in to acess to this page !</IonText>
-    <IonButton href="/login">LOGIN</IonButton></>
+    return <>
+      <IonButton id="btnLoginFil" href="/login">Login</IonButton><br/>
+      <div id="textLoggedIn"> You must be logged in to access this page.</div></>
   }
 }
 
@@ -93,8 +110,8 @@ const Fil: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
+      <IonContent>
+      <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large" id="titreInsta">InstaSound</IonTitle>
           </IonToolbar>
