@@ -5,6 +5,7 @@ import ExploreContainer from '../components/ExploreContainer';
 import {loginUser} from '../FirebaseConfig';
 import {toast} from '../Toast';
 import './Login.css';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -13,6 +14,7 @@ const Login: React.FC = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [busy, setBusy] = useState<boolean>(false)
+  const history = useHistory();
 
   async function login() {
       setBusy(true)
@@ -21,6 +23,7 @@ const Login: React.FC = () => {
           toast('Error logging with your credentials')
       } else {
           toast('You have logged in')
+          history.push("/profil");
       }
       setBusy(false)
   }

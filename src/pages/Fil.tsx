@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonInput, IonButton, IonText, IonIcon, IonItem, IonLabel } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Fil.css';
-import AddItem from '../AddItem';
-import ItemList from '../ItemList';
 import { toast } from '../Toast';
 import posts from '../assets/json/posts.json';
 import { cpuUsage } from 'process';
 import { getEmail } from '../FirebaseConfig';
 import { chatboxOutline, chatbubbleOutline, heartCircle, heartOutline, personCircle } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 function setUsername(){
   const email = getEmail();
@@ -58,7 +57,8 @@ function saveComment(id: number){
   var saisie = (document.getElementById("comment"+id) as HTMLInputElement).value;
   console.log(saisie)
   if(saisie){
-  JsonPosts["posts"][id]["comments"].unshift({date: dateLoc,username: username ,message: saisie})
+  JsonPosts["posts"][id]["comments"].unshift({date: dateLoc,username: username ,message: saisie});
+  (document.getElementById("comment"+id) as HTMLInputElement).value = "";
 }}
 
 function isLogIn(){
@@ -89,7 +89,7 @@ function isLogIn(){
           
           <IonInput id={"comment"+i} type="text" placeholder="Add a comment..."></IonInput>
           
-          <IonButton id="btnSendComment" onClick={() => saveComment(i)}>Post</IonButton>
+          <Link to="/fil"><IonButton id="btnSendComment" onClick={() => saveComment(i)}>Post</IonButton></Link>
           </div>
           <br/>
           {post.date}

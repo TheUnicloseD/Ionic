@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage,IonButton, IonList, IonTitle, IonToolbar, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonItem, IonInput, IonBadge, IonRouterOutlet, IonRow, IonCol, IonLoading  } from '@ionic/react';
 import React, { useState } from 'react';
 import { book, search, person,personCircle } from 'ionicons/icons';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 import {toast} from '../Toast'; 
 import {registerUser} from '../FirebaseConfig';
@@ -15,7 +15,8 @@ const Register: React.FC = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [cpassword, setCPassword] = useState('')
-  const [busy, setBusy] = useState<boolean>(false)  
+  const [busy, setBusy] = useState<boolean>(false);
+  const history = useHistory();
 
   async function RegisterUser() {
       setBusy(true)
@@ -29,6 +30,7 @@ const Register: React.FC = () => {
       if (res) {
           return toast('You have registered successfully!')
       }
+      history.push('/login')
       setBusy(false)
 
     

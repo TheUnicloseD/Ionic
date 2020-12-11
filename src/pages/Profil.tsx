@@ -28,9 +28,9 @@ const Profil: React.FC = () => {
     function logInButton(){
       const email = getEmail();
       if (!email){return <>
-      <IonButton id="btnLoginProfil" href="/login">
+      <Link to="/login"><IonButton id="btnLoginProfil">
         Login
-      </IonButton>
+      </IonButton></Link>
       <IonButton id="btnCreateProfil" href="/register">
           Create an account
       </IonButton></>}

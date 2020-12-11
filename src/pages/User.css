@@ -1,0 +1,77 @@
+#imgProfil {
+    height: 90px;
+    width: 90px;
+    margin: auto;
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+}
+
+#nameProfil {
+    margin-left: 10%;
+}
+
+#editProfil {
+    width: 90%;
+    border: 1px solid gray;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#toggleDarkMode {
+    margin-top: 0!important;
+}
+
+#gridProfil {
+    margin-top: 40px!important;
+}
+
+#btnLogoutProfil {
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   width: 90%;
+    margin: auto;
+  
+}
+
+#btnLoginProfil {
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   width: 90%;
+    margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#btnCreateProfil {
+    border: none;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    height: 75px;
+    --border-radius: 0;
+   width: 90%;
+    margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

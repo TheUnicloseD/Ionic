@@ -5,6 +5,7 @@ import 'firebase/auth'
 import 'firebase/database'
 import { useDocument } from 'react-firebase-hooks/firestore';
 import {toast} from './Toast';
+import { useHistory } from 'react-router';
 
 //Mettre dans un fichier séparé et dans le gitignore
 var firebaseConfig = {
@@ -46,9 +47,8 @@ export async function registerUser(email:string, username:string, password:strin
                 return user.updateProfile({
               displayName: username
             })}
-        console.log(res);
     })} catch(error) {
-        toast(error.message,4000)
+        //toast(error.message,4000)
         return false
     }
 }
